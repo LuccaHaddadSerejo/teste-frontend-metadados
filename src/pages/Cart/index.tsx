@@ -39,7 +39,7 @@ const Cart = () => {
           </StyledPriceCart>
           <StyledClearCart>
             <Button
-              buttonVariation="clearCart"
+              $buttonVariation="clearCart"
               onClick={() => clearCart()}
               type="button">
               Limpar carrinho

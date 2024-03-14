@@ -45,7 +45,7 @@ const ProductDetail = () => {
               <p>{product.description}</p>
               <Button
                 onClick={() => handleAddingProductToCart(Number(product.id))}
-                buttonVariation="large"
+                $buttonVariation="large"
                 type="button">
                 Shop Now
               </Button>
