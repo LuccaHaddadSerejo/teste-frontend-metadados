@@ -10,23 +10,23 @@ Technical test for front-end developer position in Metadados.
 - <a href="#-tech">Technologies</a>
 - <a href="#-commands">General commands and Tests</a>
 
-## <h2 id="#-about">About the project<h2>
+## <h2 id="-about">About the project<h2>
 
-Esse projeto tem como objetivo replicar um prototipo do figma, fornecido pela empresa metadados
-e consumir a seguinte api pública: Platzi Fake Store API.
+The objective of this project is to copy a figma prototype, provided by the company Metadados
+and consume the following public API: Fake Store API.
 
-O app tem as seguintes funcionalidades/features:
+The project has the following features:
 
-- [x] Listagem de produtos
-- [x] Filtro por nome
-- [x] Filtro por categoria
-- [x] Filtro por preço
-- [x] Filtro por range de preço
-- [x] Carrinho de compras
-- [x] Carrosel de imagens
-- [x] Responsividade
+- [x] Product listing
+- [x] Filter by name
+- [x] Filter by category
+- [x] Filter by price
+- [x] Filter by price range
+- [x] Shopping cart
+- [x] Image carousel
+- [x] Responsiveness
 
-## <h2 id="#-install">Installing and running the project<h2>
+## <h2 id="-install">Installing and running the project<h2>
 
 ```bash
 # Install de dependencies:
@@ -56,7 +56,7 @@ This application uses Docker and Docker-compose to run, be sure to have those in
 - [x] Styled-components
 - [x] Other React/js libraries
 
-## <h2 id="#-commands">General commands and Tests<h2>
+## <h2 id="-commands">General commands and Tests<h2>
 
 ```bash
 # Build or rebuild the images:
