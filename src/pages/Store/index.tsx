@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { StoreContext } from "../../providers/storeContext";
 import { StyledList, StyledSection, StyledStoreMain } from "./style";
 import { iProduct } from "../../providers/storeContext/types";
@@ -11,6 +11,7 @@ import { FaRegSadCry } from "react-icons/fa";
 import Loading from "../../components/Loading";
 import Filter from "../../components/Filter";
 import Modal from "../../components/Modal";
+import { ModalContext } from "../../providers/modalContext";
 
 const Store = () => {
   const {
@@ -21,8 +22,10 @@ const Store = () => {
     currentOffset,
     filteredProductsList,
   } = useContext(StoreContext);
+
   const { filterType } = useContext(FilterContext);
-  const [showModal, setShowModal] = useState<boolean>(false);
+
+  const { isModalOpen, toggleModal } = useContext(ModalContext);
 
   useEffect(() => {
     if (productsList.length === 0) {
@@ -30,19 +33,15 @@ const Store = () => {
     }
   }, []);
 
-  const toggleModal = (): void => {
-    setShowModal(!showModal);
-  };
-
   const listToRender: iProduct[] = isFiltered
     ? filteredProductsList
     : productsList;
 
   return (
     <>
-      {showModal && (
-        <Modal open={showModal}>
-          <Filter onClose={toggleModal} />
+      {isModalOpen && (
+        <Modal>
+          <Filter />
         </Modal>
       )}
       <StyledStoreMain>
