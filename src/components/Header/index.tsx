@@ -78,7 +78,7 @@ const Header = () => {
               {isWide ? (
                 <Button
                   type={"button"}
-                  buttonVariation="simple"
+                  $buttonVariation="simple"
                   onClick={() => handleNavigation()}>
                   <FaShoppingBag />
                   {location.pathname === "/cart" ? "Shopping" : "Cart"}
@@ -86,7 +86,7 @@ const Header = () => {
               ) : (
                 <Button
                   type={"button"}
-                  buttonVariation="simple"
+                  $buttonVariation="simple"
                   onClick={() => handleNavigation()}>
                   <FaShoppingBag />
                 </Button>
@@ -96,21 +96,21 @@ const Header = () => {
               {isSearchOpen ? (
                 <StyledOpenSearch>
                   <Input
-                    inputVariation="search"
+                    $inputVariation="search"
                     type={"text"}
                     placeholder={"Search a product!"}
                     onChange={handleInputChange}
                   />
                   <Button
                     disabled={searchValue.length > 0 ? false : true}
-                    buttonVariation="search"
+                    $buttonVariation="search"
                     type="button"
                     onClick={() => handleSearch()}>
                     <FaMagnifyingGlass size={20} />
                   </Button>
                   <Button
                     type="button"
-                    buttonVariation="clearFilter"
+                    $buttonVariation="clearFilter"
                     onClick={() => clearSearch()}>
                     Limpar busca
                   </Button>
@@ -118,7 +118,7 @@ const Header = () => {
               ) : (
                 <StyledClosedSearch>
                   <Button
-                    buttonVariation="search"
+                    $buttonVariation="search"
                     type="button"
                     onClick={toggleSearch}>
                     <FaMagnifyingGlass size={20} />
@@ -130,7 +130,7 @@ const Header = () => {
         </div>
         <div>
           <Button
-            buttonVariation="categories"
+            $buttonVariation="categories"
             type="button"
             onClick={() => clearFilter()}>
             All
@@ -138,7 +138,7 @@ const Header = () => {
           {categoriesList.map((elt) => {
             return (
               <Button
-                buttonVariation="categories"
+                $buttonVariation="categories"
                 key={elt.id}
                 type="button"
                 onClick={() => filterByCategory(elt.id)}>

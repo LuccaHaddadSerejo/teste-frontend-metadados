@@ -59,7 +59,7 @@ const Filter = () => {
       <div>
         <h3>Filtrar por preço</h3>
         <Input
-          inputVariation="filterPrice"
+          $inputVariation="filterPrice"
           onChange={handlePriceInputChange}
           type="text"
           id="price"
@@ -71,7 +71,7 @@ const Filter = () => {
         <h3>Filtrar por range</h3>
         <div>
           <Input
-            inputVariation="filterPrice"
+            $inputVariation="filterPrice"
             onChange={handleMinInputChange}
             type="text"
             label="Valor mínimo"
@@ -80,7 +80,7 @@ const Filter = () => {
           />
           {isWide && <span>~</span>}
           <Input
-            inputVariation="filterPrice"
+            $inputVariation="filterPrice"
             onChange={handleMaxInputChange}
             type="text"
             label="Valor máximo"
@@ -93,7 +93,7 @@ const Filter = () => {
         <h3>Filtrar por ordem</h3>
         <div>
           <Button
-            buttonVariation={
+            $buttonVariation={
               isButtonAscActive ? "filterOrderActive" : "filterOrder"
             }
             type="button"
@@ -101,7 +101,7 @@ const Filter = () => {
             Crescente
           </Button>
           <Button
-            buttonVariation={
+            $buttonVariation={
               isButtonDescActive ? "filterOrderActive" : "filterOrder"
             }
             type="button"
@@ -112,7 +112,7 @@ const Filter = () => {
       </div>
       <div>
         <Button
-          buttonVariation="submitFilter"
+          $buttonVariation="submitFilter"
           type="button"
           onClick={() => {
             handleSubmit();
@@ -120,7 +120,7 @@ const Filter = () => {
           Filtrar
         </Button>
         <Button
-          buttonVariation="closeFilterModal"
+          $buttonVariation="closeFilterModal"
           onClick={toggleModal}
           type="button">
           Fechar

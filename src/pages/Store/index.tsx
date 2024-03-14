@@ -61,7 +61,7 @@ const Store = () => {
             <Button
               onClick={toggleModal}
               type="button"
-              buttonVariation="filter">
+              $buttonVariation="filter">
               Filter
               <FaFilter />
             </Button>

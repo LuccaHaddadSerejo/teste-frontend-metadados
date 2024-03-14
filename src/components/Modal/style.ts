@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { ModalFadeIn } from "../../styles/animations";
 
 export interface iStyledModalProps {
-  isOpen: boolean;
+  $isOpen: boolean;
 }
 
 export const StyledWrapper = styled.div<iStyledModalProps>`
@@ -17,8 +17,8 @@ export const StyledWrapper = styled.div<iStyledModalProps>`
   align-items: center;
   justify-content: center;
 
-  ${({ isOpen }: iStyledModalProps) => {
-    switch (isOpen) {
+  ${({ $isOpen }: iStyledModalProps) => {
+    switch ($isOpen) {
       case true:
         return css`
           display: block;
@@ -45,8 +45,8 @@ export const StyledModalMain = styled.div<iStyledModalProps>`
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 
-  ${({ isOpen }: iStyledModalProps) => {
-    if (isOpen) {
+  ${({ $isOpen }: iStyledModalProps) => {
+    if ($isOpen) {
       return css`
         animation-name: ${ModalFadeIn};
       `;

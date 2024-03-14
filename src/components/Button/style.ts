@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export interface iStyledButtonProps {
-  buttonVariation?: string;
+  $buttonVariation?: string;
 }
 
 export const StyledButton = styled.button<iStyledButtonProps>`
@@ -11,8 +11,8 @@ export const StyledButton = styled.button<iStyledButtonProps>`
   transition: 0.3s;
   border: none;
 
-  ${({ buttonVariation }: iStyledButtonProps) => {
-    switch (buttonVariation) {
+  ${({ $buttonVariation }: iStyledButtonProps) => {
+    switch ($buttonVariation) {
       case "regular":
         return css`
           width: 100%;

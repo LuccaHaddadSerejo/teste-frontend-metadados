@@ -7,7 +7,7 @@ interface iInputProps {
   placeholder: string;
   disabled?: boolean;
   label?: string;
-  inputVariation?: string;
+  $inputVariation?: string;
   value?: string;
   hidden?: boolean;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -19,13 +19,13 @@ const Input = ({
   placeholder,
   disabled,
   label,
-  inputVariation,
+  $inputVariation,
   value,
   hidden,
   onChange,
 }: iInputProps) => {
   return (
-    <StyledInput inputVariation={inputVariation}>
+    <StyledInput $inputVariation={$inputVariation}>
       <div>
         <label hidden={hidden} htmlFor={id}>
           {label}

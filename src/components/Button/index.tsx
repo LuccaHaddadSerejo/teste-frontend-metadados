@@ -6,7 +6,7 @@ interface iButtonProps {
   type: "button";
   disabled?: boolean;
   onClick?: () => void;
-  buttonVariation?: string;
+  $buttonVariation?: string;
 }
 
 const Button = ({
@@ -14,11 +14,11 @@ const Button = ({
   onClick,
   type,
   disabled,
-  buttonVariation,
+  $buttonVariation,
 }: iButtonProps) => {
   return (
     <StyledButton
-      buttonVariation={buttonVariation}
+      $buttonVariation={$buttonVariation}
       type={type}
       disabled={disabled}
       onClick={onClick}>

@@ -26,7 +26,7 @@ const CardMain = ({ id, category, price, title, images }: iCardMainProps) => {
         <Carousel isDetail={false} images={images} />
         <Button
           type="button"
-          buttonVariation="regular"
+          $buttonVariation="regular"
           onClick={() => getProductDetail()}>
           <FaShoppingBag />
           Comprar

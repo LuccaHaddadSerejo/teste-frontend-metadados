@@ -10,8 +10,8 @@ interface iModalProps {
 const Modal = ({ children }: iModalProps) => {
   const { isModalOpen } = useContext(ModalContext);
   return (
-    <StyledWrapper isOpen={isModalOpen}>
-      <StyledModalMain isOpen={isModalOpen}>
+    <StyledWrapper $isOpen={isModalOpen}>
+      <StyledModalMain $isOpen={isModalOpen}>
         <div className="modal-body">{children}</div>
         <div className="btn-container"></div>
       </StyledModalMain>

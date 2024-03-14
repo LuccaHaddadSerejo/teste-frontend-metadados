@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export interface iStyledInputProps {
-  inputVariation?: string;
+  $inputVariation?: string;
 }
 
 export const StyledInput = styled.div<iStyledInputProps>`
@@ -12,8 +12,8 @@ export const StyledInput = styled.div<iStyledInputProps>`
   justify-content: center;
 
   input {
-    ${({ inputVariation }) => {
-      switch (inputVariation) {
+    ${({ $inputVariation }) => {
+      switch ($inputVariation) {
         case "search":
           return css`
             width: 100%;

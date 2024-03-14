@@ -19,7 +19,7 @@ const Pagination = ({ productList, isHidden }: iPaginationProps) => {
     <StyledPagination isHidden={isHidden}>
       {currentPage !== 1 && (
         <Button
-          buttonVariation="pagination"
+          $buttonVariation="pagination"
           type="button"
           onClick={() => goBackPage()}>
           <IoIosArrowBack />
@@ -29,7 +29,7 @@ const Pagination = ({ productList, isHidden }: iPaginationProps) => {
       <span>{currentPage}</span>
       {checkIfNextPageExists(productList) && (
         <Button
-          buttonVariation="pagination"
+          $buttonVariation="pagination"
           onClick={() => goNextPage()}
           type="button">
           Seguinte

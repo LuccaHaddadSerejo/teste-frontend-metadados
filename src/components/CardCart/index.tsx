@@ -39,14 +39,14 @@ const CardCart = ({ id, price, title, images, counter }: iCardCartProps) => {
         <div>
           <Button
             disabled={counter === 1 ? true : false}
-            buttonVariation="addSubtract"
+            $buttonVariation="addSubtract"
             type="button"
             onClick={() => subtractCounter(id)}>
             -
           </Button>
           <span>{counter}</span>
           <Button
-            buttonVariation="addSubtract"
+            $buttonVariation="addSubtract"
             type="button"
             onClick={() => addCounter(id)}>
             +
