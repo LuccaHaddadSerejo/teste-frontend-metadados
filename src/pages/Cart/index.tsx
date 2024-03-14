@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CardCart from "../../components/CardCart";
 import { CartContext } from "../../providers/cartContext";
 import { iCartProduct } from "../../providers/cartContext/types";
@@ -48,7 +48,7 @@ const Cart = () => {
             </StyledPriceCart>
             <StyledClearCart>
               <Button
-                buttonVariation="clearCart"
+                $buttonVariation="clearCart"
                 onClick={() => clearCart()}
                 type="button">
                 Limpar carrinho
