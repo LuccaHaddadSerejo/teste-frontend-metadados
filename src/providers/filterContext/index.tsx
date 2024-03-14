@@ -18,7 +18,6 @@ export const FilterProvider = ({ children }: iFilterContextProps) => {
     setCurrentQueryFilter,
     setIsFiltered,
     setFilteredProductsList,
-    currentOffset,
     setCurrentPage,
     setCurrentOffset,
   } = useContext(StoreContext);
@@ -104,6 +103,7 @@ export const FilterProvider = ({ children }: iFilterContextProps) => {
     try {
       setGlobalLoading(true);
       const res = await api.get<iProduct[]>(`/products/price=${price}`);
+
       setFilteredProductsList(res.data);
       setIsFiltered(true);
       setCurrentQueryFilter(`price=${price}`);
@@ -162,25 +162,32 @@ export const FilterProvider = ({ children }: iFilterContextProps) => {
 
     if (price.length > 0 || rangeMin.length > 0 || rangeMax.length > 0) {
       query = formatData(price, rangeMin, rangeMax);
-      setCurrentQueryFilter(`${query}&offset=${currentOffset}&limit=8`);
+      setCurrentQueryFilter(`${query}`);
     } else {
-      setCurrentQueryFilter(`offset=0&limit=8`);
+      setCurrentQueryFilter("");
     }
 
     try {
       setGlobalLoading(true);
       const res = await api.get<iProduct[]>(
-        query.length > 0
-          ? `/products/?${query}&offset=${currentOffset}&limit=8`
-          : `/products/?offset=0&limit=8`
+        query.length > 0 ? `/products/?${query}` : `/products/`
       );
-      const sortData = res.data.sort((a: iProduct, b: iProduct) =>
-        order === true ? a.price - b.price : b.price - a.price
-      );
+
+      const dataToRender: iProduct[] = [];
+
+      if (res.data.length > 0) {
+        const sortData = res.data.sort((a: iProduct, b: iProduct) =>
+          order === true ? a.price - b.price : b.price - a.price
+        );
+
+        for (let i = 0; i < 8; i++) {
+          dataToRender.push(sortData[i]);
+        }
+      }
 
       setCurrentPage(1);
       setCurrentOffset(0);
-      setFilteredProductsList(sortData);
+      setFilteredProductsList(dataToRender);
       setIsFiltered(true);
     } catch (error) {
       const currentError = error as AxiosError<iErrorResponse>;

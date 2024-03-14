@@ -15,12 +15,15 @@ export const StyledCartCard = styled.li`
     justify-content: space-between;
     width: 100%;
     max-width: 550px;
+    gap: 15px;
 
     & > :nth-child(1) {
       & > div {
+        width: 100%;
         display: flex;
         align-items: center;
-        gap: 16px;
+        justify-content: space-between;
+        min-width: 180px;
 
         & > img {
           border: 1px solid var(--color-stroke);
