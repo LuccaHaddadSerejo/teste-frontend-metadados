@@ -1,3 +1,4 @@
+import Layout from "./components/Layout";
 import { CartProvider } from "./providers/cartContext";
 import { FilterProvider } from "./providers/filterContext";
 import { StoreProvider } from "./providers/storeContext";
@@ -12,7 +13,9 @@ function App() {
         <StoreProvider>
           <FilterProvider>
             <CartProvider>
-              <RoutesMain />
+              <Layout>
+                <RoutesMain />
+              </Layout>
             </CartProvider>
           </FilterProvider>
         </StoreProvider>
