@@ -1,5 +1,13 @@
+import { StoreProvider } from "./providers/storeContext";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <>
+        <StoreProvider></StoreProvider>
+      </>
+    </>
+  );
 }
 
 export default App;
