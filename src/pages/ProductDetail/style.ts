@@ -9,6 +9,7 @@ export const StyledProductDetailMain = styled.main`
 export const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 95%;
   gap: 64px;
 
@@ -17,6 +18,11 @@ export const StyledContent = styled.div`
   }
 
   & > :nth-child(2) {
+    @media (min-width: 768px) {
+      width: 50%;
+      flex-direction: row;
+    }
+
     & > h3 {
       margin-bottom: 9px;
       color: var(--color-dark-base);
