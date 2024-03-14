@@ -1,30 +1,73 @@
-# React + TypeScript + Vite
+# Metadados-frontend-pleno
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Technical test for front-end developer position in Metadados.
 
-Currently, two official plugins are available:
+## Index
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- <a href="#-about">About the project</a>
+- <a href="#-install">Installing and running the project</a>
+- <a href="#-requirements">Requirements to run the project</a>
+- <a href="#-tech">Technologies</a>
+- <a href="#-commands">General commands and Tests</a>
 
-## Expanding the ESLint configuration
+## <h2 id=#-about>About the project<h2>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Esse projeto tem como objetivo replicar um prototipo do figma, fornecido pela empresa metadados
+e consumir a seguinte api pública: Platzi Fake Store API.
 
-- Configure the top-level `parserOptions` property like this:
+O app tem as seguintes funcionalidades/features:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- [x] Listagem de produtos
+- [x] Filtro por nome
+- [x] Filtro por categoria
+- [x] Filtro por preço
+- [x] Filtro por range de preço
+- [x] Carrinho de compras
+- [x] Carrosel de imagens
+- [x] Responsividade
+
+## <h2 id=#-install>Installing and running the project<h2>
+
+```bash
+# Install de dependencies:
+$ npm i
+
+# Use docker-compose build to build the images:
+$ docker-compose build
+
+# Start the project with docker compose:
+$ docker-compose up
+
+# Acess the project through your browser:
+$ http://localhost:5173/
+
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## <h2 id="-requirements">Requisitos do serviço</h2>
+
+This application uses Docker and Docker-compose to run, be sure to have those installed in your machine.
+
+## <h2 id="-tech">Technologies utilized</h2>
+
+- [x] React
+- [x] Typescript
+- [x] Jest
+- [x] Docker
+- [x] Styled-components
+- [x] Other React/js libraries
+
+## <h2 id=#-commands>General commands and Tests<h2>
+
+```bash
+# Build or rebuild the images:
+$ docker-compose build
+
+# Start the app and the db:
+$ docker-compose up
+
+# Shutdown the containers:
+$ docker-compose down
+
+# Run tests:
+$ npm test
+```
