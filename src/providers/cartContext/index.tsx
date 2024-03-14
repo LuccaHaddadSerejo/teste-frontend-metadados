@@ -13,7 +13,6 @@ export const CartProvider = ({ children }: iCartContextProps) => {
   useEffect(() => {
     (() => {
       const cart = localStorage.getItem("@CART");
-      console.log(cart);
       if (cart !== "undefined" && cart !== null) {
         const parsedData = JSON.parse(cart || "");
         if (parsedData) {
