@@ -12,9 +12,6 @@ Technical test for front-end developer position in Metadados.
 
 ## <h2 id="-about">About the project<h2>
 
-Esse projeto tem como objetivo replicar um prototipo do figma, fornecido pela empresa metadados
-e consumir a seguinte api pública: Platzi Fake Store API.
-
 The objective of this project is to copy a figma prototype, provided by the company Metadados
 and consume the following public API: Fake Store API.
 
