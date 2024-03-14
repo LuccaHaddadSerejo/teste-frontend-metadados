@@ -1,6 +1,7 @@
 import { CartProvider } from "./providers/cartContext";
 import { FilterProvider } from "./providers/filterContext";
 import { StoreProvider } from "./providers/storeContext";
+import RoutesMain from "./routes";
 
 function App() {
   return (
@@ -8,7 +9,9 @@ function App() {
       <>
         <StoreProvider>
           <FilterProvider>
-            <CartProvider></CartProvider>
+            <CartProvider>
+              <RoutesMain />
+            </CartProvider>
           </FilterProvider>
         </StoreProvider>
       </>
