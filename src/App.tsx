@@ -1,3 +1,4 @@
+import { CartProvider } from "./providers/cartContext";
 import { FilterProvider } from "./providers/filterContext";
 import { StoreProvider } from "./providers/storeContext";
 
@@ -6,7 +7,9 @@ function App() {
     <>
       <>
         <StoreProvider>
-          <FilterProvider></FilterProvider>
+          <FilterProvider>
+            <CartProvider></CartProvider>
+          </FilterProvider>
         </StoreProvider>
       </>
     </>
