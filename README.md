@@ -1,35 +1,73 @@
-# Vaga desenvolvedor Front End Pleno
+# Metadados-frontend-pleno
 
-O desafio envolve desenvolver uma aplicação baseando-se em um protótipo no Figma e implementar funcionalidades como: listar todos os produtos, buscar produtos pelo nome, listar produtos por categoria e adicionar produtos ao carrinho.
- 
-## Quem somos?
-A Metadados é uma empresa que há mais de três decádas vem desenvolvendo soluções para Recursos Humanos. Nossa história é marcada pela conexão entre pessoas, forjando relações de confiança. Somos especialistas na área de RH e entregamos - a milhares de clientes - tecnologias, serviços e conhecimentos para evoluir pessoas.
-Compartilhamos uma trajetória ativa, forte e pulsante! 
+Technical test for front-end developer position in Metadados.
 
-## Instruções
-- Faça um fork desse projeto para sua conta do Github;
-- Desenvolva conforme as intruções técnicas;
-- Crie um README com intruções de como executar o projeto;
-  
-## Projeto
-Você foi selecionado para participar de um teste técnico para a vaga de Front-End Pleno. Sua missão é desenvolver uma aplicação seguindo o [layout](https://www.figma.com/file/HYMUQxxwvGfSHeQMyY6ZKM/Teste-Front-end?type=design&node-id=604%3A431&mode=design&t=TFNLa19Qm8W8AH2J-1) no Figma. 
+## Index
 
-### Especificações técnicas
-- A aplicação deve ser desenvolvida utilizando a biblioteca React;
-- Utilize CSS, CSS modules, qualquer pré-processador ou alguma biblioteca de css-in-js como o styled-components ou [goober](https://goober.js.org/).
-- Não Utilizar bibliotecas de UI como Bootstrap, Tailwind, Chakra ou afins;
-- A aplicação deve consumir as informações de produtos e categorias da seguinte API REST [Platzi Fake Store API](https://fakeapi.platzi.com/en/about/introduction/);  
-- No mais, sinta-se livre para escolher sua arquitetura e bibliotecas favoritas.
+- <a href="#-about">About the project</a>
+- <a href="#-install">Installing and running the project</a>
+- <a href="#-requirements">Requirements to run the project</a>
+- <a href="#-tech">Technologies</a>
+- <a href="#-commands">General commands and Tests</a>
 
-### Pontos extras
-- Utilização de Typescript;
-- Responsividade;
-- Escrita de testes automatizado para as principais funcionalidades;
-- Fique a vontade para adicionar novas funcionalidades ao projeto.
-  
-### Critérios de Avaliação:
-- Fidelidade ao protótipo;
-- Componentização;
-- Organização do projeto;
+## <h2 id="-about">About the project<h2>
 
-  
+The objective of this project is to copy a figma prototype, provided by the company Metadados
+and consume the following public API: Fake Store API.
+
+The project has the following features:
+
+- [x] Product listing
+- [x] Filter by name
+- [x] Filter by category
+- [x] Filter by price
+- [x] Filter by price range
+- [x] Shopping cart
+- [x] Image carousel
+- [x] Responsiveness
+
+## <h2 id="-install">Installing and running the project<h2>
+
+```bash
+# Install de dependencies:
+$ npm i
+
+# Use docker-compose build to build the images:
+$ docker-compose build
+
+# Start the project with docker compose:
+$ docker-compose up
+
+# Acess the project through your browser:
+$ http://localhost:5173/
+
+```
+
+## <h2 id="-requirements">Service requirements</h2>
+
+This application uses Docker and Docker-compose to run, be sure to have those installed in your machine.
+
+## <h2 id="-tech">Technologies utilized</h2>
+
+- [x] React
+- [x] Typescript
+- [x] Jest
+- [x] Docker
+- [x] Styled-components
+- [x] Other React/js libraries
+
+## <h2 id="-commands">General commands and Tests<h2>
+
+```bash
+# Build or rebuild the images:
+$ docker-compose build
+
+# Start the app and the db:
+$ docker-compose up
+
+# Shutdown the containers:
+$ docker-compose down
+
+# Run tests:
+$ npm test
+```
