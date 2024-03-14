@@ -21,6 +21,7 @@ export const StyledMainCart = styled.main`
 
 export const StyledPriceCart = styled.div`
   margin-top: 32px;
+  margin-bottom: 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
