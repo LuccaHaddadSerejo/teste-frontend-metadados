@@ -19,6 +19,7 @@ export const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
 
   & > :nth-child(1) {
     font-family: var(--font-style-opensans);

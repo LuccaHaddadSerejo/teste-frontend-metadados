@@ -25,6 +25,13 @@ export const StyledButton = styled.button<iStyledButtonProps>`
           gap: 8px;
           padding-right: 3px;
           color: var(--color-white-base);
+          position: relative;
+          bottom: 4px;
+
+          @media (min-width: 325px) {
+            bottom: 0px;
+          }
+
           &:hover {
             background-color: var(--color-primary-base);
           }

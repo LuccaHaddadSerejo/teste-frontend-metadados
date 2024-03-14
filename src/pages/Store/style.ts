@@ -21,6 +21,7 @@ export const StyledList = styled.ul`
   justify-content: center;
   gap: 24px;
   width: 100%;
+  position: relative;
 
   & > div {
     display: flex;

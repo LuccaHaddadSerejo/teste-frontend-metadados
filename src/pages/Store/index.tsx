@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { StoreContext } from "../../providers/storeContext";
 import { StyledList, StyledSection, StyledStoreMain } from "./style";
 import { iProduct } from "../../providers/storeContext/types";
@@ -33,9 +33,18 @@ const Store = () => {
     }
   }, []);
 
+  const [showMessage, setShowMessage] = useState(false);
+
   const listToRender: iProduct[] = isFiltered
     ? filteredProductsList
     : productsList;
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowMessage(true);
+    }, 2000);
+    return () => clearTimeout(timeout);
+  }, [listToRender]);
 
   return (
     <>
@@ -57,7 +66,7 @@ const Store = () => {
               <FaFilter />
             </Button>
             <StyledList>
-              {listToRender.length === 0 ? (
+              {listToRender.length === 0 && showMessage ? (
                 <div>
                   <h3>
                     {filterType.type === "title"
@@ -79,7 +88,7 @@ const Store = () => {
                 ))
               )}
             </StyledList>
-            <Pagination productList={listToRender} />
+            <Pagination isHidden={showMessage} productList={listToRender} />
           </StyledSection>
         )}
       </StyledStoreMain>
