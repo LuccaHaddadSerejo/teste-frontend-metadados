@@ -124,8 +124,6 @@ export const FilterProvider = ({ children }: iFilterContextProps) => {
 
     let query: string = "";
 
-    console.log("chegou", arr);
-    console.log("filterType", filterType);
     if (arr[0].length !== 0) {
       query += `price=${arr[0]}`;
     }
@@ -164,19 +162,18 @@ export const FilterProvider = ({ children }: iFilterContextProps) => {
 
     if (price.length > 0 || rangeMin.length > 0 || rangeMax.length > 0) {
       query = formatData(price, rangeMin, rangeMax);
-      setCurrentQueryFilter(`${query}offset=${currentOffset}&limit=8`);
+      setCurrentQueryFilter(`${query}&offset=${currentOffset}&limit=8`);
     } else {
-      query = "offset=0&limit=8";
+      setCurrentQueryFilter(`offset=0&limit=8`);
     }
 
-    setCurrentQueryFilter(query);
     try {
       setGlobalLoading(true);
-
       const res = await api.get<iProduct[]>(
-        query.length > 0 ? `/products/?${query}` : `/products/?${query}`
+        query.length > 0
+          ? `/products/?${query}&offset=${currentOffset}&limit=8`
+          : `/products/?offset=0&limit=8`
       );
-
       const sortData = res.data.sort((a: iProduct, b: iProduct) =>
         order === true ? a.price - b.price : b.price - a.price
       );
