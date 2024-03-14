@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface iStyledPagination {
-  isHidden?: boolean;
+  $isHidden?: boolean;
 }
 
 export const StyledPagination = styled.div<iStyledPagination>`
@@ -16,8 +16,8 @@ export const StyledPagination = styled.div<iStyledPagination>`
     font-family: var(--font-style-opensans);
   }
 
-  ${({ isHidden }) => {
-    switch (isHidden) {
+  ${({ $isHidden }) => {
+    switch ($isHidden) {
       case true:
         return css`
           display: none;

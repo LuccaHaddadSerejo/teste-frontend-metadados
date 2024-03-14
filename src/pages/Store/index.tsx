@@ -34,6 +34,7 @@ const Store = () => {
   }, []);
 
   const [showMessage, setShowMessage] = useState(false);
+  const [isPaginationVisible, setIsPaginationVisible] = useState(true);
 
   const listToRender: iProduct[] = isFiltered
     ? filteredProductsList
@@ -42,7 +43,8 @@ const Store = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowMessage(true);
-    }, 2000);
+      setIsPaginationVisible(false);
+    }, 200);
     return () => clearTimeout(timeout);
   }, [listToRender]);
 
@@ -88,7 +90,10 @@ const Store = () => {
                 ))
               )}
             </StyledList>
-            <Pagination isHidden={showMessage} productList={listToRender} />
+            <Pagination
+              $isHidden={isPaginationVisible}
+              productList={listToRender}
+            />
           </StyledSection>
         )}
       </StyledStoreMain>

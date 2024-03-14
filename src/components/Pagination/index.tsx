@@ -8,15 +8,15 @@ import { iProduct } from "../../providers/storeContext/types";
 
 interface iPaginationProps {
   productList: iProduct[];
-  isHidden: boolean;
+  $isHidden: boolean;
 }
 
-const Pagination = ({ productList, isHidden }: iPaginationProps) => {
+const Pagination = ({ productList, $isHidden }: iPaginationProps) => {
   const { goBackPage, goNextPage, currentPage, checkIfNextPageExists } =
     useContext(StoreContext);
 
   return (
-    <StyledPagination isHidden={isHidden}>
+    <StyledPagination $isHidden={$isHidden}>
       {currentPage !== 1 && (
         <Button
           $buttonVariation="pagination"
