@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const StyledLoading = styled.div`
+interface iLoadingProps {
+  "data-testid"?: string; // Define the type of data-testid attribute
+}
+
+export const StyledLoading = styled.div<iLoadingProps>`
   position: absolute;
   top: 500px;
   width: 80px;
@@ -21,3 +25,7 @@ export const StyledLoading = styled.div`
     }
   }
 `;
+
+StyledLoading.defaultProps = {
+  "data-testid": "loading-spinner",
+};
