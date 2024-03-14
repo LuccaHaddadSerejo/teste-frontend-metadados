@@ -59,7 +59,7 @@ const Filter = () => {
       <div>
         <h3>Filtrar por preço</h3>
         <Input
-          inputVariation="filterPrice"
+          $inputVariation="filterPrice"
           onChange={handlePriceInputChange}
           type="text"
           id="price"
@@ -71,7 +71,7 @@ const Filter = () => {
         <h3>Filtrar por range</h3>
         <div>
           <Input
-            inputVariation="filterPrice"
+            $inputVariation="filterPrice"
             onChange={handleMinInputChange}
             type="text"
             label="Valor mínimo"
@@ -80,7 +80,7 @@ const Filter = () => {
           />
           {isWide && <span>~</span>}
           <Input
-            inputVariation="filterPrice"
+            $inputVariation="filterPrice"
             onChange={handleMaxInputChange}
             type="text"
             label="Valor máximo"

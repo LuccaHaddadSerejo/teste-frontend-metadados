@@ -96,7 +96,7 @@ const Header = () => {
               {isSearchOpen ? (
                 <StyledOpenSearch>
                   <Input
-                    inputVariation="search"
+                    $inputVariation="search"
                     type={"text"}
                     placeholder={"Search a product!"}
                     onChange={handleInputChange}
