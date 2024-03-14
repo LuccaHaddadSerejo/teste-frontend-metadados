@@ -43,7 +43,7 @@ $ http://localhost:5173/
 
 ```
 
-## <h2 id="-requirements">Requisitos do serviço</h2>
+## <h2 id="-requirements">Service requirements</h2>
 
 This application uses Docker and Docker-compose to run, be sure to have those installed in your machine.
 
