@@ -1,15 +1,12 @@
 import { useContext, useState } from "react";
 import { FilterContext } from "../../providers/filterContext";
+import { ModalContext } from "../../providers/modalContext";
 import Input from "../Input";
 import Button from "../Button";
 import { StyledModalMainContent } from "./style";
 import { useMediaQuery } from "react-responsive";
 
-interface iFilterProps {
-  onClose: () => void;
-}
-
-const Filter = ({ onClose }: iFilterProps) => {
+const Filter = () => {
   const [priceValue, setPriceValue] = useState<string>("");
   const [rangeMinValue, setRangeMinValue] = useState<string>("");
   const [rangeMaxValue, setRangeMaxValue] = useState<string>("");
@@ -18,6 +15,7 @@ const Filter = ({ onClose }: iFilterProps) => {
   const [isButtonDescActive, setIsButtonDescActive] = useState<boolean>(false);
 
   const { joinFilters } = useContext(FilterContext);
+  const { toggleModal } = useContext(ModalContext);
 
   const isWide: boolean = useMediaQuery({ minWidth: 534 });
 
@@ -52,7 +50,7 @@ const Filter = ({ onClose }: iFilterProps) => {
   };
 
   const handleSubmit = (): void => {
-    onClose();
+    toggleModal();
     joinFilters(priceValue, rangeMinValue, rangeMaxValue, isAscending);
   };
 
@@ -123,7 +121,7 @@ const Filter = ({ onClose }: iFilterProps) => {
         </Button>
         <Button
           buttonVariation="closeFilterModal"
-          onClick={onClose}
+          onClick={toggleModal}
           type="button">
           Fechar
         </Button>

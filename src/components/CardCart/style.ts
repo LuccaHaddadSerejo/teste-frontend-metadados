@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CardCartFadeIn } from "../../styles/animations";
 
 export const StyledCartCard = styled.li`
   display: flex;
@@ -6,6 +7,7 @@ export const StyledCartCard = styled.li`
   width: 100%;
   gap: 10px;
   overflow-x: auto;
+  animation: ${CardCartFadeIn} 0.4s ease-in both;
 
   & > :nth-child(1) {
     display: flex;

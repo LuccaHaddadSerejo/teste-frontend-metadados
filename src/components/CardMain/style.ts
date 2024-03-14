@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CardFadeIn } from "../../styles/animations";
 
 export const StyledMainCard = styled.li`
   width: 90%;
@@ -9,6 +10,8 @@ export const StyledMainCard = styled.li`
   display: flex;
   flex-direction: column;
   gap: 18px;
+
+  animation: ${CardFadeIn} 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 `;
 
 export const StyledContent = styled.div`
